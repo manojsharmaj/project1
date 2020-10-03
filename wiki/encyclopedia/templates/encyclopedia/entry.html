@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{name}}
+{% endblock %}
+
+{% block body %}
+    {{ entry|safe|escape }}
+    <div>
+        <a href="{% url 'edit' name=name %}">Edit Page</a>
+    </div>
+    <form>
+        <input type="hidden" value= {{entry}}>
+    </form>
+{% endblock %}      
+        

@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    edit
+{% endblock %}
+
+{% block body %}
+   
+    <form action="{% url 'edit' name=name %}" method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-9">
+                <h2>Type content in Markdown format</h2>
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="12" name="cont">{{entry}}</textarea>  
+            </div>
+        </div>            
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+{% endblock %}
